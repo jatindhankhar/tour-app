@@ -1,11 +1,15 @@
 package in.jatindhankhar.places.ui.fragments.adapters;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import in.jatindhankhar.places.R;
 import in.jatindhankhar.places.ui.fragments.PageFragment;
+import in.jatindhankhar.places.utils.Utils;
 
 /**
  * Created by jatin on 1/13/18.
@@ -23,7 +27,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return PageFragment.newInstance(position+1);
+        return PageFragment.newInstance(position+1,tabTitles[position].toLowerCase());
     }
 
     @Override

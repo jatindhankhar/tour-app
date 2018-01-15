@@ -17,6 +17,11 @@ import in.jatindhankhar.places.R;
  */
 
 public class PlacesDataAdapter extends RecyclerView.Adapter<PlacesDataAdapter.ViewHolder> {
+    private String mCategory;
+    public PlacesDataAdapter(String category) {
+        this.mCategory = category;
+    }
+
     @Override
     public PlacesDataAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View root = LayoutInflater.from(parent.getContext()).inflate(R.layout.place_card,parent,false);
@@ -26,8 +31,9 @@ public class PlacesDataAdapter extends RecyclerView.Adapter<PlacesDataAdapter.Vi
     @Override
     public void onBindViewHolder(PlacesDataAdapter.ViewHolder holder, int position) {
                 holder.placeLocation.setText("Haifa Street");
-                holder.placeName.setText("Delhi");
+                holder.placeName.setText(mCategory);
                 holder.placeRating.setRating(4.5f);
+                holder.placePicture.setImageResource(R.drawable.india_gate);
     }
 
     @Override
