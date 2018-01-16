@@ -28,13 +28,6 @@
     </string-array>
 
 
-    <integer-array name="explore_places_images">
-        <item>@drawable/india_gate</item>
-        <item>@drawable/lotus_temple</item>
-        <item>@drawable/qutub_minar</item>
-        <item>@drawable/akshardham_temple</item>
-    </integer-array>
-
     <!-- Eat Data -->
 
     <string name="paranthe_wali_gali">Paranthe Wali Gali</string>
@@ -61,14 +54,6 @@
         <item>@string/raju_chaat_bhandar_address</item>
 
     </string-array>
-
-    <integer-array name="eat_places_images">
-        <item>@drawable/paranthe</item>
-        <item>@drawable/kulfi</item>
-        <item>@drawable/sweets</item>
-        <item>@drawable/chaat</item>
-
-    </integer-array>
 
 
     <!-- Shop Data -->
@@ -98,12 +83,6 @@
         <item>@string/dh_address</item>
     </string-array>
 
-    <integer-array name="shop_places_images">
-        <item>@drawable/cp</item>
-        <item>@drawable/janpath</item>
-        <item>@drawable/sn</item>
-        <item>@drawable/dilli_haat</item>
-    </integer-array>
 
     <!-- Stay Data -->
     <string name="paharganj">Paharganj</string>
@@ -129,12 +108,6 @@
     </string-array>
 
 
-    <integer-array name="stay_places_images">
-        <item>@drawable/paharganj</item>
-        <item>@drawable/saket</item>
-        <item>@drawable/cp</item>
-        <item>@drawable/south_delhi</item>
-    </integer-array>
 
     <string name="explore">Explore</string>
     <string name="eat">Eat</string>

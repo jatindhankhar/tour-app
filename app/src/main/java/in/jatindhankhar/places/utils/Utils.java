@@ -60,7 +60,8 @@ public class Utils {
         HashMap<String, Object> map = new HashMap<>();
         map.put(MAP_KEY_NAME, context.getResources().getStringArray(R.array.explore_places_name));
         map.put(MAP_KEY_LOCATION, context.getResources().getStringArray(R.array.explore_places_location));
-        map.put(MAP_KEY_IMAGES, context.getResources().getStringArray(R.array.explore_places_images));
+        int[] images = {R.drawable.india_gate,R.drawable.lotus_temple,R.drawable.qutub_minar,R.drawable.akshardham_temple};
+        map.put(MAP_KEY_IMAGES, images);
         return map;
 
     }
@@ -69,7 +70,8 @@ public class Utils {
         HashMap<String, Object> map = new HashMap<>();
         map.put(MAP_KEY_NAME, context.getResources().getStringArray(R.array.eat_places_name));
         map.put(MAP_KEY_LOCATION, context.getResources().getStringArray(R.array.eat_places_location));
-        map.put(MAP_KEY_IMAGES, context.getResources().getStringArray(R.array.eat_places_images));
+        int[] images = {R.drawable.paranthe,R.drawable.kulfi,R.drawable.sweets,R.drawable.chaat};
+        map.put(MAP_KEY_IMAGES, images);
         return map;
     }
 
@@ -77,7 +79,8 @@ public class Utils {
         HashMap<String, Object> map = new HashMap<>();
         map.put(MAP_KEY_NAME, context.getResources().getStringArray(R.array.shop_places_name));
         map.put(MAP_KEY_LOCATION, context.getResources().getStringArray(R.array.shop_places_location));
-        map.put(MAP_KEY_IMAGES, context.getResources().getStringArray(R.array.shop_places_images));
+        int[] images = {R.drawable.cp,R.drawable.janpath,R.drawable.sn,R.drawable.dilli_haat};
+        map.put(MAP_KEY_IMAGES, images);
         return map;
     }
 
@@ -85,7 +88,8 @@ public class Utils {
         HashMap<String, Object> map = new HashMap<>();
         map.put(MAP_KEY_NAME, context.getResources().getStringArray(R.array.stay_places_name));
         map.put(MAP_KEY_LOCATION, context.getResources().getStringArray(R.array.stay_places_location));
-        map.put(MAP_KEY_IMAGES, context.getResources().getStringArray(R.array.stay_places_images));
+        int[] images = {R.drawable.paharganj,R.drawable.saket,R.drawable.cp,R.drawable.south_delhi};
+        map.put(MAP_KEY_IMAGES, images);
         return map;
     }
 }
