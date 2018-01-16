@@ -1,5 +1,7 @@
 package in.jatindhankhar.places.utils;
 
+import android.content.res.Resources;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
