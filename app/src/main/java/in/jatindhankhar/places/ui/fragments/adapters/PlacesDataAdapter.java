@@ -22,11 +22,11 @@ import static in.jatindhankhar.places.utils.Constants.MAP_KEY_IMAGES;
 import static in.jatindhankhar.places.utils.Constants.MAP_KEY_LOCATION;
 import static in.jatindhankhar.places.utils.Constants.MAP_KEY_NAME;
 import static in.jatindhankhar.places.utils.Constants.PLACE_COUNT;
-import static in.jatindhankhar.places.utils.Constants.getEatMap;
-import static in.jatindhankhar.places.utils.Constants.getExploreMap;
-import static in.jatindhankhar.places.utils.Constants.getShopMap;
-import static in.jatindhankhar.places.utils.Constants.getStayMap;
-import static in.jatindhankhar.places.utils.Constants.tabTitles;
+import static in.jatindhankhar.places.utils.Utils.getEatMap;
+import static in.jatindhankhar.places.utils.Utils.getExploreMap;
+import static in.jatindhankhar.places.utils.Utils.getShopMap;
+import static in.jatindhankhar.places.utils.Utils.getStayMap;
+
 
 /**
  * Created by jatin on 1/14/18.
@@ -35,11 +35,12 @@ import static in.jatindhankhar.places.utils.Constants.tabTitles;
 public class PlacesDataAdapter extends RecyclerView.Adapter<PlacesDataAdapter.ViewHolder> {
     private String mCategory;
     private Context mContext;
-    private HashMap<String,ArrayList<Place>> placeData = new HashMap<>();
+    private HashMap<String, ArrayList<Place>> placeData = new HashMap<>();
+
     public PlacesDataAdapter(Context context, String category) {
         this.mCategory = category;
         this.mContext = context;
-        Log.d("BOI","Fetching for category " + category);
+        Log.d("BOI", "Fetching for category " + category);
 
         populatedata();
 
@@ -47,56 +48,55 @@ public class PlacesDataAdapter extends RecyclerView.Adapter<PlacesDataAdapter.Vi
 
     @Override
     public PlacesDataAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View root = LayoutInflater.from(parent.getContext()).inflate(R.layout.place_card,parent,false);
+        View root = LayoutInflater.from(parent.getContext()).inflate(R.layout.place_card, parent, false);
         return new ViewHolder(root);
     }
 
     @Override
     public void onBindViewHolder(PlacesDataAdapter.ViewHolder holder, int position) {
-                Place p = placeData.get(mCategory).get(position);
-                holder.placeLocation.setText(p.getLocation());
-                holder.placeName.setText(p.getName());
-                holder.placeRating.setRating(4.5f);
-                holder.placePicture.setImageResource(p.getImageResource());
+        Place p = placeData.get(mCategory).get(position);
+        holder.placeLocation.setText(p.getLocation());
+        holder.placeName.setText(p.getName());
+        holder.placeRating.setRating(4.5f);
+        holder.placePicture.setImageResource(p.getImageResource());
     }
 
-    private void populatedata()
-    {
-        for(String category : tabTitles)
-        {
+    private void populatedata() {
+        for (String category : mContext.getResources().getStringArray(R.array.tab_data)) {
             category = category.toLowerCase();
-            placeData.put(category,fetchData(category));
+            placeData.put(category, fetchData(category));
         }
 
     }
-    private ArrayList<Place> fetchData(String category)
-    {
+
+    private ArrayList<Place> fetchData(String category) {
         ArrayList<Place> places = new ArrayList<>();
-        HashMap<String,Object> placeMap = new HashMap<>();
-        switch (category)
-        {
+        HashMap<String, Object> placeMap = new HashMap<>();
+        switch (category) {
             case "explore":
-                placeMap = getExploreMap();break;
+                placeMap = getExploreMap(mContext);
+                break;
             case "eat":
-                placeMap = getEatMap(); break;
+                placeMap = getEatMap(mContext);
+                break;
             case "shop":
-                placeMap = getShopMap();break;
-            case "stay" :
-                 placeMap = getStayMap();
+                placeMap = getShopMap(mContext);
+                break;
+            case "stay":
+                placeMap = getStayMap(mContext);
 
         }
-        for(int i=0; i<PLACE_COUNT; i++)
-        {
+        for (int i = 0; i < PLACE_COUNT; i++) {
             Place p = new Place();
 
-            p.setName(((String [])placeMap.get(MAP_KEY_NAME))[i]);
-            p.setLocation(((String [])placeMap.get(MAP_KEY_LOCATION))[i]);
-            p.setImageResource(((int [])placeMap.get(MAP_KEY_IMAGES))[i]);
+            p.setName(((String[]) placeMap.get(MAP_KEY_NAME))[i]);
+            p.setLocation(((String[]) placeMap.get(MAP_KEY_LOCATION))[i]);
+            p.setImageResource(((int[]) placeMap.get(MAP_KEY_IMAGES))[i]);
             places.add(p);
 
         }
 
-     return places;
+        return places;
     }
 
     @Override
@@ -115,9 +115,9 @@ public class PlacesDataAdapter extends RecyclerView.Adapter<PlacesDataAdapter.Vi
         @BindView(R.id.place_rating)
         RatingBar placeRating;
 
-       ViewHolder(View itemView) {
+        ViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.bind(this,itemView);
+            ButterKnife.bind(this, itemView);
         }
     }
 }

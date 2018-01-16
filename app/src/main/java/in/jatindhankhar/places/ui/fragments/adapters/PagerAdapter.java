@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import in.jatindhankhar.places.R;
 import in.jatindhankhar.places.ui.fragments.PageFragment;
 import in.jatindhankhar.places.utils.Constants;
 
@@ -14,25 +15,25 @@ import in.jatindhankhar.places.utils.Constants;
 
 // Thanks https://guides.codepath.com/android/google-play-style-tabs-using-tablayout
 public class PagerAdapter extends FragmentPagerAdapter {
-    private Context context;
+    private Context mContext;
 
-    public PagerAdapter(FragmentManager fm,Context ctx) {
+    public PagerAdapter(FragmentManager fm, Context ctx) {
         super(fm);
-        this.context = ctx;
+        this.mContext = ctx;
     }
 
     @Override
     public Fragment getItem(int position) {
-        return PageFragment.newInstance(Constants.tabTitles[position].toLowerCase());
+        return PageFragment.newInstance(mContext.getResources().getStringArray(R.array.tab_data)[position].toLowerCase());
     }
 
     @Override
     public int getCount() {
-        return Constants.tabTitles.length;
+        return Constants.PLACE_COUNT;
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return Constants.tabTitles[position];
+        return mContext.getResources().getStringArray(R.array.tab_data)[position];
     }
 }

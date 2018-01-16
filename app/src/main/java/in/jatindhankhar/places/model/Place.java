@@ -5,21 +5,18 @@ package in.jatindhankhar.places.model;
  */
 
 public class Place {
-    String name;
-    String location;
-    int imageResource;
-    String phoneNumber;
+    private String name;
+    private String location;
+    private int imageResource;
 
-    public Place()
-    {
+    public Place() {
 
     }
 
-    public Place(String name, String location, int imageResource,String phoneNumber) {
+    public Place(String name, String location, int imageResource) {
         this.name = name;
         this.location = location;
         this.imageResource = imageResource;
-        this.phoneNumber = phoneNumber;
     }
 
     public String getLocation() {

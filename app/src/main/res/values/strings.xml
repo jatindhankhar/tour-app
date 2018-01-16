@@ -1,6 +1,150 @@
 <resources>
     <string name="app_name">Places</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Explore data -->
+    <string name="india_gate">India Gate</string>
+    <string name="lotus_temple">Lotus Temple</string>
+    <string name="qutub_minar">Qutub Minar</string>
+    <string name="akshardham_temple">AksharDham Temple</string>
+
+    <string name="india_gate_address">Rajpath Marg, India Gate, New Delhi, Delhi 110001</string>
+    <string name="lotus_temple_address">Lotus Temple Rd, Bahapur, Shambhu Dayal Bagh, Kalkaji, New Delhi, Delhi 110019</string>
+    <string name="qutub_minar_address">Mehrauli, Seth Sarai, Mehrauli, New Delhi, Delhi 110030</string>
+    <string name="akshardham_temple_address">Noida Mor, Pandav Nagar, New Delhi, Delhi 110092</string>
+
+
+    <string-array name="explore_places_name">
+        <item>@string/india_gate</item>
+        <item>@string/lotus_temple</item>
+        <item>@string/qutub_minar</item>
+        <item>@string/akshardham_temple</item>
+    </string-array>
+
+    <string-array name="explore_places_location">
+        <item>@string/india_gate_address</item>
+        <item>@string/lotus_temple_address</item>
+        <item>@string/qutub_minar_address</item>
+        <item>@string/akshardham_temple_address</item>
+    </string-array>
+
+
+    <integer-array name="explore_places_images">
+        <item>@drawable/india_gate</item>
+        <item>@drawable/lotus_temple</item>
+        <item>@drawable/qutub_minar</item>
+        <item>@drawable/akshardham_temple</item>
+    </integer-array>
+
+    <!-- Eat Data -->
+
+    <string name="paranthe_wali_gali">Paranthe Wali Gali</string>
+    <string name="roshan_di_kulfi">Roshan Di Kulfi</string>
+    <string name="kallan_sweets">Kallan Sweets</string>
+    <string name="raju_chaat_bhandar">Raju Chaat Bhandar</string>
+
+    <string name="paranthe_wali_gali_address">Paranthe Wali Gali, Maliwara, Chandni Chowk, New Delhi, Delhi</string>
+    <string name="roshan_di_kulfi_address">2816, Ajmal Khan Rd, Block 34P, Beadonpura, Karol Bagh, New Delhi, Delhi 110005</string>
+    <string name="kallan_sweets_address">Shop No.4-5,, Matia Mahal Road,Opposte Jama Masjid Gate No.1, Matia Mahal,, New Delhi, Delhi 110006</string>
+    <string name="raju_chaat_bhandar_address"> 76, Swami Narayan Marg, Ashok Vihar, Delhi, 110052</string>
+
+    <string-array name="eat_places_name">
+        <item>@string/paranthe_wali_gali</item>
+        <item>@string/roshan_di_kulfi</item>
+        <item>@string/kallan_sweets</item>
+        <item>@string/raju_chaat_bhandar</item>
+    </string-array>
+
+    <string-array name="eat_places_location">
+        <item>@string/paranthe_wali_gali_address</item>
+        <item>@string/roshan_di_kulfi_address</item>
+        <item>@string/kallan_sweets_address</item>
+        <item>@string/raju_chaat_bhandar_address</item>
+
+    </string-array>
+
+    <integer-array name="eat_places_images">
+        <item>@drawable/paranthe</item>
+        <item>@drawable/kulfi</item>
+        <item>@drawable/sweets</item>
+        <item>@drawable/chaat</item>
+
+    </integer-array>
+
+
+    <!-- Shop Data -->
+
+    <string name="cp">Connaught Place</string>
+    <string name="jm">Janpath Market</string>
+    <string name="sn">Sarojini Nagar Market</string>
+    <string name="dh">Dilli Haat</string>
+
+    <string name="cp_address">Connaught Place,New Delhi, Delhi 110001</string>
+    <string name="jm_address">Janpath Rd, Janpath, Connaught Place, New Delhi, Delhi 110001</string>
+    <string name="sn_address">Sarojini Nagar Market, Sarojini Nagar, New Delhi, Delhi</string>
+    <string name="dh_address">"Kidwai Nagar West, Kidwai Nagar New Delhi, Delhi 110023</string>
+
+    <string-array name="shop_places_name">
+        <item>@string/cp</item>
+        <item>@string/jm</item>
+        <item>@string/sn</item>
+        <item>@string/dh</item>
+    </string-array>
+
+
+    <string-array name="shop_places_location">
+        <item>@string/cp_address</item>
+        <item>@string/jm_address</item>
+        <item>@string/sn_address</item>
+        <item>@string/dh_address</item>
+    </string-array>
+
+    <integer-array name="shop_places_images">
+        <item>@drawable/cp</item>
+        <item>@drawable/janpath</item>
+        <item>@drawable/sn</item>
+        <item>@drawable/dilli_haat</item>
+    </integer-array>
+
+    <!-- Stay Data -->
+    <string name="paharganj">Paharganj</string>
+    <string name="saket">Saket</string>
+    <string name="south_delhi">South Delhi</string>
+
+    <string name="paharganj_address">Paharganj, New Delhi, Delhi</string>
+    <string name="saket_address">Saket, New Delhi, Delhi 110017</string>
+    <string name="south_delhi_address">South Delhi, New Delhi, Delhi</string>
+
+    <string-array name="stay_places_name">
+        <item>@string/paharganj</item>
+        <item>@string/saket</item>
+        <item>@string/cp</item>
+        <item>@string/south_delhi</item>
+    </string-array>
+
+    <string-array name="stay_places_location">
+        <item>@string/paharganj_address</item>
+        <item>@string/saket_address</item>
+        <item>@string/cp_address</item>
+        <item>@string/south_delhi_address</item>
+    </string-array>
+
+
+    <integer-array name="stay_places_images">
+        <item>@drawable/paharganj</item>
+        <item>@drawable/saket</item>
+        <item>@drawable/cp</item>
+        <item>@drawable/south_delhi</item>
+    </integer-array>
+
+    <string name="explore">Explore</string>
+    <string name="eat">Eat</string>
+    <string name="shop">Shop</string>
+    <string name="stay">Stay</string>
+
+    <string-array name="tab_data">
+        <item>@string/explore</item>
+        <item>@string/eat</item>
+        <item>@string/shop</item>
+        <item>@string/stay</item>
+    </string-array>
 </resources>

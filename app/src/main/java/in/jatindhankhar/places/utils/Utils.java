@@ -9,6 +9,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
 
+import java.util.HashMap;
+
+import in.jatindhankhar.places.R;
+
+import static in.jatindhankhar.places.utils.Constants.MAP_KEY_IMAGES;
+import static in.jatindhankhar.places.utils.Constants.MAP_KEY_LOCATION;
+import static in.jatindhankhar.places.utils.Constants.MAP_KEY_NAME;
+
 /**
  * Created by jatin on 1/15/18.
  */
@@ -43,9 +51,41 @@ public class Utils {
     }
 
     @NonNull
-    public static String[] fetchArraybyId(Context context, String resName)
-    {
-        int resId = context.getResources().getIdentifier(resName,"array",context.getPackageName());
+    public static String[] fetchArraybyId(Context context, String resName) {
+        int resId = context.getResources().getIdentifier(resName, "array", context.getPackageName());
         return context.getResources().getStringArray(resId);
+    }
+
+    public static HashMap<String, Object> getExploreMap(Context context) {
+        HashMap<String, Object> map = new HashMap<>();
+        map.put(MAP_KEY_NAME, context.getResources().getStringArray(R.array.explore_places_name));
+        map.put(MAP_KEY_LOCATION, context.getResources().getStringArray(R.array.explore_places_location));
+        map.put(MAP_KEY_IMAGES, context.getResources().getStringArray(R.array.explore_places_images));
+        return map;
+
+    }
+
+    public static HashMap<String, Object> getEatMap(Context context) {
+        HashMap<String, Object> map = new HashMap<>();
+        map.put(MAP_KEY_NAME, context.getResources().getStringArray(R.array.eat_places_name));
+        map.put(MAP_KEY_LOCATION, context.getResources().getStringArray(R.array.eat_places_location));
+        map.put(MAP_KEY_IMAGES, context.getResources().getStringArray(R.array.eat_places_images));
+        return map;
+    }
+
+    public static HashMap<String, Object> getShopMap(Context context) {
+        HashMap<String, Object> map = new HashMap<>();
+        map.put(MAP_KEY_NAME, context.getResources().getStringArray(R.array.shop_places_name));
+        map.put(MAP_KEY_LOCATION, context.getResources().getStringArray(R.array.shop_places_location));
+        map.put(MAP_KEY_IMAGES, context.getResources().getStringArray(R.array.shop_places_images));
+        return map;
+    }
+
+    public static HashMap<String, Object> getStayMap(Context context) {
+        HashMap<String, Object> map = new HashMap<>();
+        map.put(MAP_KEY_NAME, context.getResources().getStringArray(R.array.stay_places_name));
+        map.put(MAP_KEY_LOCATION, context.getResources().getStringArray(R.array.stay_places_location));
+        map.put(MAP_KEY_IMAGES, context.getResources().getStringArray(R.array.stay_places_images));
+        return map;
     }
 }
