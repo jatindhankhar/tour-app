@@ -20,13 +20,12 @@ public class PageFragment extends Fragment {
     public static final String ARG_PAGE = "ARG_PAGE";
     public static final String ARG_CATEGORY = "ARG_CATEGORY";
 
-    private int mPage;
+    private Context mContext;
     private RecyclerView recyclerView;
     private String mCategory;
 
-    public static PageFragment newInstance(int page,String category) {
+    public static PageFragment newInstance(String category) {
         Bundle args = new Bundle();
-        args.putInt(ARG_PAGE, page);
         args.putString(ARG_CATEGORY,category);
         PageFragment fragment = new PageFragment();
         fragment.setArguments(args);
@@ -36,7 +35,6 @@ public class PageFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mPage = getArguments().getInt(ARG_PAGE);
         mCategory = getArguments().getString(ARG_CATEGORY);
     }
 
@@ -45,8 +43,6 @@ public class PageFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_page, container, false);
         recyclerView = (RecyclerView) view;
-       // textView.setText("Fragment #" + mPage);
-        Log.d("RECYCLERVIEW","Tab number is " + mPage);
         Log.d("RECYCLERVIEW","Category name is  " + mCategory );
         setRecyclerView();
         return view;
@@ -54,7 +50,7 @@ public class PageFragment extends Fragment {
 
     private void setRecyclerView()
     {
-        recyclerView.setAdapter(new PlacesDataAdapter(mCategory));
+        recyclerView.setAdapter(new PlacesDataAdapter(getContext(),mCategory));
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
     }
 }

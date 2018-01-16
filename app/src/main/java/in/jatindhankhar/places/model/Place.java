@@ -10,7 +10,12 @@ public class Place {
     int imageResource;
     String phoneNumber;
 
-    Place(String name, String location, int imageResource,String phoneNumber) {
+    public Place()
+    {
+
+    }
+
+    public Place(String name, String location, int imageResource,String phoneNumber) {
         this.name = name;
         this.location = location;
         this.imageResource = imageResource;

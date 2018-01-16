@@ -3,6 +3,7 @@ package in.jatindhankhar.places.utils;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
+import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
@@ -39,5 +40,12 @@ public class Utils {
     public static void setAmbience(Context context, int color) {
         setStatusColor(context, color);
         setSupportActionBarColor(context, color);
+    }
+
+    @NonNull
+    public static String[] fetchArraybyId(Context context, String resName)
+    {
+        int resId = context.getResources().getIdentifier(resName,"array",context.getPackageName());
+        return context.getResources().getStringArray(resId);
     }
 }
